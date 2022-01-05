@@ -1,6 +1,10 @@
-import { contextBridge, ipcRenderer } from "electron";
+import { contextBridge } from "electron";
+import { APIBridge } from "./frontend/apiBridge";
 
-contextBridge.exposeInMainWorld("test", {
-    test: ()=>{ipcRenderer.invoke("test","test").then((val:string)=>{console.log(val)})},
-    rend: ()=>{return ipcRenderer}
-})
+const bridge:APIBridge = {
+    getFileNames: async () => {
+        return ["TestFile", "TestFile2"];
+    }
+}
+
+contextBridge.exposeInMainWorld("bridge", bridge);

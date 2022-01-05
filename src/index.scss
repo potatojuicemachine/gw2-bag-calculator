@@ -1,0 +1,31 @@
+$app-base-color: rgb(60, 60, 60);
+$navbar-background-color: rgb(30, 30, 30);
+$navbar-highlight-color: rgb(50, 50, 50);
+$navbar-text-color: lightgrey;
+
+body{
+    background-color: $app-base-color;
+    margin:0;
+}
+
+#navbar{
+    background-color: $navbar-background-color;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+
+    .navbar-link{
+        color: $navbar-text-color;
+        padding: 10px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }.active{
+        background-color: $app-base-color;
+    }
+
+    .navbar-link:not(.active):hover{
+        background-color: $navbar-highlight-color;
+    }
+}

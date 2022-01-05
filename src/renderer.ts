@@ -26,6 +26,10 @@
  * ```
  */
 
-import './index.css';
+import { APIBridge } from './frontend/apiBridge';
+import { Navbar } from './frontend/navbar';
+import { NavigationController } from './frontend/navigationController';
+import './index.scss';
 
-console.log('👋 This message is being logged by "renderer.js", included via webpack');
+const navigation_controller = new NavigationController();
+const navbar = new Navbar(navigation_controller);

@@ -1,5 +1,10 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const webpack = require("webpack");
 
 module.exports = [
-  new ForkTsCheckerWebpackPlugin()
+  new ForkTsCheckerWebpackPlugin(),
+  new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+  })
 ];
